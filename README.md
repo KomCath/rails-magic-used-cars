@@ -128,3 +128,10 @@ With every file we need to answer just a couple questions:
 
 
 🎉 THE SERVER STARTED FOR THE FIRST TIME 🎉
+
+
+  17. create  .gitignore
+
+  - Documentation:  Specifies intentionally untracked files to ignore 
+  - This is so when code is pushed into github the things inside won’t go, sensitive stuff like log/ and tmp/ 💀
+

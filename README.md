@@ -99,6 +99,32 @@ With every file we need to answer just a couple questions:
   - Documentation: Spring is a Rails application preloader. It speeds up development by keeping your application running in the background so you don't need to boot it every time you run a test, rake task or migration.
 
 
+  12. create  app/assets/config/manifest.js
+
+  - This for compiling assets stuff
+  - Sprockets 3 introduced the concept of a "manifest" file that could list all assets you want to make available using the link directive.
+      - Sprockets is a Ruby library for compiling and serving web assets. Sprockets allows to organize an application's JavaScript files into smaller more manageable chunks that can be distributed over a number of directories and files. It provides structure and practices on how to include assets in our projects
+
+  13. create  tmp
+  14. create  tmp/cache
+
+  - is a temporary backup, cache, or other data file created automatically by a software program.
 
 
+  15. create  log
 
+  - All the informations about your web applications requests are written in it, and it is quite useful. When you start your application with rails s you can see it (it is tailing the development.log)
+
+
+`rails s`
+```
+ Webpacker configuration file not found /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ realpath_rec - /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml (RuntimeError)
+```
+
+
+  16. create  config/webpacker.yml
+
+  - Documentation: The goal of webpack, or any front-end build system, is to allow you to write your front-end code in a way that is convenient for developers and then package that code in a way that is convenient for browsers. With webpack, you can manage JavaScript, CSS, and static assets like images or fonts. Webpack will allow you to write your code, reference other code in your application, transform your code, and combine your code into easily downloadable packs.
+
+
+🎉 THE SERVER STARTED FOR THE FIRST TIME 🎉

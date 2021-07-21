@@ -105,13 +105,13 @@ With every file we need to answer just a couple questions:
   - Sprockets 3 introduced the concept of a "manifest" file that could list all assets you want to make available using the link directive.
       - Sprockets is a Ruby library for compiling and serving web assets. Sprockets allows to organize an application's JavaScript files into smaller more manageable chunks that can be distributed over a number of directories and files. It provides structure and practices on how to include assets in our projects
 
-  13. create  tmp
-  14. create  tmp/cache
+  13. create  tmp 🚨 created automatically 
+  14. create  tmp/cache 🚨 created automatically
 
   - is a temporary backup, cache, or other data file created automatically by a software program.
 
 
-  15. create  log
+  15. create  log 🚨 created automatically
 
   - All the informations about your web applications requests are written in it, and it is quite useful. When you start your application with rails s you can see it (it is tailing the development.log)
 

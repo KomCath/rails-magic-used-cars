@@ -135,3 +135,17 @@ With every file we need to answer just a couple questions:
   - Documentation:  Specifies intentionally untracked files to ignore 
   - This is so when code is pushed into github the things inside won’t go, sensitive stuff like log/ and tmp/ 💀
 
+
+ 18. create  app/models/application_record.rb
+
+  - Mother of all models, all other models inherit from this
+
+
+ 19. create  app/views/layouts/application.html.erb
+
+  - Mother of the HTML “face” of the app
+ 
+
+ 20. create  app/controllers/application_controller.rb
+
+  - Mother of all controllers, any logic that is shared between controllers should go here.

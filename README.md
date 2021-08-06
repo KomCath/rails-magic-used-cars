@@ -149,3 +149,14 @@ With every file we need to answer just a couple questions:
  20. create  app/controllers/application_controller.rb
 
   - Mother of all controllers, any logic that is shared between controllers should go here.
+
+
+ 21. create  db
+
+  - This is where the database lives.
+
+
+ 22. create  config/database.yml
+ 
+  -  Documentation: where you set up all the information to connect to the database. It differs depending on the kind of DB you use.
+  - Rails uses an SQLite3 database for data storage by default, but I'm changing to PostgreSQL!

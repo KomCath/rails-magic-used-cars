@@ -117,8 +117,7 @@ With every file we need to answer just a couple questions:
 
 
 `rails s`
-```
- Webpacker configuration file not found /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ realpath_rec - /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml (RuntimeError)
+```Webpacker configuration file not found /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ realpath_rec - /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml (RuntimeError)
 ```
 
 
@@ -160,3 +159,38 @@ With every file we need to answer just a couple questions:
  
   -  Documentation: where you set up all the information to connect to the database. It differs depending on the kind of DB you use.
   - Rails uses an SQLite3 database for data storage by default, but I'm changing to PostgreSQL!
+
+
+ 23. To test if controller and view were working working:
+
+     - Added to `routes.rb` 
+
+        `root 'application#hello'` 
+
+     - Added to `application_controller.rb` 
+        ```
+
+          def hello
+            render html: "hello, used cars app 🛻-🚕-🚙-🚗"
+          end
+
+        ```  
+      
+     - Got in response:
+     
+        `ActiveRecord::NoDatabaseError (FATAL:  database "used_car_development" does not exist` 
+
+     - Ran `rails db:create` and got:
+     
+        
+          ```rails aborted!
+                    No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+          ```
+            
+
+ 24. create  Rakefile
+
+  - Documentation: Rake is a popular task runner for Ruby and Rails applications. For example, Rails provides the predefined Rake tasks for creating databases, running migrations, and performing tests.
+
+
+🎉 FIRST VIEW "hello, used cars app 🛻-🚕-🚙-🚗" WORKED 🎉

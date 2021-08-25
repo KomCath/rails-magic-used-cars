@@ -194,3 +194,24 @@ With every file we need to answer just a couple questions:
 
 
 🎉 FIRST VIEW "hello, used cars app 🛻-🚕-🚙-🚗" WORKED 🎉
+
+
+For timestamps I'm using `Time.now.strftime("%Y%m%d%H%M%S")`
+
+
+25. Installed bcrypt gem
+
+  -Documentation: bcrypt-ruby is a Ruby binding for the OpenBSD bcrypt() password hashing algorithm, allowing you to easily store a secure hash of your users passwords.
+
+
+26. create Users table
+  
+  - t.string "first_name"
+  - t.string "email"
+  - t.string "password_digest" ⭐
+  - t.boolean "admin", null: false
+  - t.string "last_name"
+  - t.index ["email"], name: "index_users_on_email", unique: true
+
+  ⭐ if the column is named password the bcrypt gem won't do the encrypting, so the column must be **password_digest**
+  

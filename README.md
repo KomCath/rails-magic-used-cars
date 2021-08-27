@@ -116,11 +116,12 @@ With every file we need to answer just a couple questions:
   - All the informations about your web applications requests are written in it, and it is quite useful. When you start your application with rails s you can see it (it is tailing the development.log)
 
 
-`rails s`
-```Webpacker configuration file not found /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml. Please run rails webpacker:install Error: No such file or directory @ realpath_rec - /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml (RuntimeError)
-```
+  `rails s`
 
-
+        Webpacker configuration file not found /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml. 
+        Please run rails webpacker:install Error: No such file or directory @ realpath_rec - /Users/catharinakomrij/Code/courses/rails-magic/used-cars/config/webpacker.yml (RuntimeError)
+   
+   
   16. create  config/webpacker.yml
 
   - Documentation: The goal of webpack, or any front-end build system, is to allow you to write your front-end code in a way that is convenient for developers and then package that code in a way that is convenient for browsers. With webpack, you can manage JavaScript, CSS, and static assets like images or fonts. Webpack will allow you to write your code, reference other code in your application, transform your code, and combine your code into easily downloadable packs.
@@ -168,12 +169,11 @@ With every file we need to answer just a couple questions:
         `root 'application#hello'` 
 
      - Added to `application_controller.rb` 
-        ```
 
+        ```
           def hello
             render html: "hello, used cars app 🛻-🚕-🚙-🚗"
           end
-
         ```  
       
      - Got in response:
@@ -181,11 +181,11 @@ With every file we need to answer just a couple questions:
         `ActiveRecord::NoDatabaseError (FATAL:  database "used_car_development" does not exist` 
 
      - Ran `rails db:create` and got:
-     
         
-          ```rails aborted!
-                    No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
-          ```
+        ```
+          rails aborted!
+            No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+        ```
             
 
  24. create  Rakefile
@@ -213,8 +213,28 @@ For timestamps I'm using `Time.now.strftime("%Y%m%d%H%M%S")`
   - t.string "last_name"
   - t.index ["email"], name: "index_users_on_email", unique: true
 
+
   ⭐ if the column is named password the bcrypt gem won't do the encrypting, so the column must be **password_digest**
   
+
 27. create Users Controller  
 
   - with basic CRUD actions
+
+
+28. create Static Pages Controller and View
+
+  - with home
+
+29. deleted from `application.html.erb`:
+
+    ```
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    ```
+
+    - after getting the error:
+
+    ```
+      Sprockets::Rails::Helper::AssetNotFound in StaticPages#home
+    ```

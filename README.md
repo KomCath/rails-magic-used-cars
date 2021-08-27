@@ -215,3 +215,6 @@ For timestamps I'm using `Time.now.strftime("%Y%m%d%H%M%S")`
 
   ⭐ if the column is named password the bcrypt gem won't do the encrypting, so the column must be **password_digest**
   
+27. create Users Controller  
+
+  - with basic CRUD actions

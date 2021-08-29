@@ -238,3 +238,23 @@ For timestamps I'm using `Time.now.strftime("%Y%m%d%H%M%S")`
     ```
       Sprockets::Rails::Helper::AssetNotFound in StaticPages#home
     ```
+
+30. create Vehicles table
+
+  - t.string "brand", null: false
+  - t.string "model", null: false
+  - t.string "trim"
+  - t.integer "year", null: false
+  - t.integer "vin", null: false
+  - t.string "external_color", null: false
+  - t.decimal "price", precision: 10, scale: 2, null: false
+  - t.text "info"
+  - t.bigint "user_id"
+  - t.datetime "created_at", precision: 6, null: false
+  - t.datetime "updated_at", precision: 6, null: false
+  - t.index ["user_id"], name: "index_vehicles_on_user_id"
+
+31. added table relationships
+
+  - Vehicle belongs_to :user
+  - User has_many :vehicles

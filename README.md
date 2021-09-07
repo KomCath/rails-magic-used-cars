@@ -174,9 +174,9 @@ With every file we need to answer just a couple questions:
           def hello
             render html: "hello, used cars app 🛻-🚕-🚙-🚗"
           end
-        ```  
-      
-     - Got in response:
+        ```
+
+    - Got in response:
      
         `ActiveRecord::NoDatabaseError (FATAL:  database "used_car_development" does not exist` 
 
@@ -226,6 +226,7 @@ For timestamps I'm using `Time.now.strftime("%Y%m%d%H%M%S")`
 
   - with home
 
+
 29. deleted from `application.html.erb`:
 
     ```
@@ -235,9 +236,8 @@ For timestamps I'm using `Time.now.strftime("%Y%m%d%H%M%S")`
 
     - after getting the error:
 
-    ```
-      Sprockets::Rails::Helper::AssetNotFound in StaticPages#home
-    ```
+          Sprockets::Rails::Helper::AssetNotFound in StaticPages#home
+    
 
 30. create Vehicles table
 
@@ -254,7 +254,40 @@ For timestamps I'm using `Time.now.strftime("%Y%m%d%H%M%S")`
   - t.datetime "updated_at", precision: 6, null: false
   - t.index ["user_id"], name: "index_vehicles_on_user_id"
 
+
 31. added table relationships
 
   - Vehicle belongs_to :user
   - User has_many :vehicles
+
+💡💡💡
+
+so has_secure_password is a rails method that gives me:
+
+- a pair of virtual attributes password and password_confirmation;
+- the ability to save a securely hashed password_digest attribute to the database;
+- and the authenticate method
+
+So in the end bcrypt is only hashing the password to be saved as password_digest attribute in the db
+
+Sessions are server-side files that store the user information, whereas Cookies are client-side files that contain user information on a local computer.
+
+💡💡💡
+
+
+32. create helpers/sessions_helper.rb
+  
+  - because the locgic I had in applcaltion_controller to handle login and current_user wasn't working
+
+33. added flash logic to aaplication.html.erb
+    
+    ```
+    <% flash.each do |message| %>
+      <div> <%= message %> </div>
+    <% end %>
+    ```
+
+  - without it flash notice wasn't working!
+
+
+34.  
